@@ -1,6 +1,6 @@
 package com.nowcoder.community.service;
 
-import com.nowcoder.community.Dao.AlphaDao;
+import com.nowcoder.community.dao.AlphaDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
