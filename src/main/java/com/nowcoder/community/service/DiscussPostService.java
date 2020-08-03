@@ -9,9 +9,13 @@ import org.springframework.web.util.HtmlUtils;
 
 import java.util.List;
 
+/**
+ * 加@Service注解能够被容器扫描到
+ */
 @Service
 public class DiscussPostService {
 
+    //注入discussPostMapper
     @Autowired
     private DiscussPostMapper discussPostMapper;
 

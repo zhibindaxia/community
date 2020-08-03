@@ -1192,3 +1192,4 @@ org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property o
 2020-07-29 20:46:00,523 ERROR [http-nio-8080-exec-1] c.n.c.c.a.ExceptionAdvice [ExceptionAdvice.java:24] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 2020-07-29 20:46:00,523 ERROR [http-nio-8080-exec-1] c.n.c.c.a.ExceptionAdvice [ExceptionAdvice.java:24] org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 2020-07-29 20:46:00,523 ERROR [http-nio-8080-exec-1] c.n.c.c.a.ExceptionAdvice [ExceptionAdvice.java:24] java.lang.Thread.run(Thread.java:745)
+2020-07-30 14:02:47,710 ERROR [http-nio-8080-exec-2] c.n.c.c.LoginController [LoginController.java:116] 响应验证码失败:java.io.IOException: 断开的管道

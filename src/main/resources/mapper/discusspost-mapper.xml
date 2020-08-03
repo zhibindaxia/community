@@ -2,8 +2,11 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--  namespace绑定接口后，可以不用写接口实现类，Mybatis会通过该绑定自动帮你找到对应要执行的SQL语句 -->
 <mapper namespace="com.nowcoder.community.dao.DiscussPostMapper">
 
+    <!--  将公用字段取出,便于使用
+        -->
     <sql id="selectFields">
         id, user_id, title, content, type, status, create_time, comment_count, score
     </sql>
@@ -12,7 +15,23 @@
         user_id, title, content, type, status, create_time, comment_count, score
     </sql>
 
+    <!--  resultType为返回类型
+          对于resultType字段,由于在 application.properties文件中配置了以下这段话
+          mybatis.type-aliases-package=com.nowcoder.community.entity
+          已经告诉它适配类在哪个包下,所以不用打出全限类名
+
+           一个标签对应一个DiscussPostMapper中的一个方法,
+           养成习惯,尽量不要写select *
+
+     -->
     <select id="selectDiscussPosts" resultType="DiscussPost">
+        <!--  <include>可以直接取用前面的公用字段
+            符号 # 可以引用方法的参数,并嵌入sql语句
+            如#{offset}, #{limit}
+            代表引用
+            List<DiscussPost> selectDiscussPosts(int userId, int offset, int limit);
+            函数中的offset参数和limit参数
+            -->
         select <include refid="selectFields"></include>
         from discuss_post
         where status != 2
@@ -40,6 +59,7 @@
     <select id="selectDiscussPostById" resultType="DiscussPost">
         select <include refid="selectFields"></include>
         from discuss_post
+
         where id = #{id}
     </select>
 

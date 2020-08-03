@@ -62,4 +62,9 @@ public interface CommunityConstant {
      */
     int SYSTEM_USER_ID = 1;
 
+    /**
+     * elasticSearch Topic
+     */
+    String TOPIC_DISCUSSPOST="discusspost";
+
 }
